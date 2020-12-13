@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Open_Lab_10._00
+namespace Open_Lab_11._00
 {
     class Book
     {
-        private string title;
-        private int pages;
-        private string category;
-        private string author;
-        private int releaseDate;
-        public string newLine = Environment.NewLine;
+        private string title { get; set; }
+        private int pages { get; set; }
+        private string category { get; set; }
+        private string author { get; set; }
+        private int releaseDate { get; set; }
+        private string newLine = Environment.NewLine;
         /// <summary>
         /// vytvorili sme list a pridali sme don kategorie
         /// </summary>
@@ -43,80 +43,9 @@ namespace Open_Lab_10._00
             this.author = author;
             this.releaseDate = releaseDate;
         }
-
-        public string Title
+        public void PrintAll()
         {
-            get
-            {
-                return title;
-            }
-            set
-            {
-                title = value;
-            }
-        }
-
-        public int Pages
-        {
-            get
-            {
-                return pages;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    pages = value;
-                }
-                else
-                {
-                    pages = 1;
-                }
-            }
-        }
-
-        public string Category
-        {
-            set
-            {
-                category = value;
-            }
-        }
-
-        public string Author
-        {
-            get
-            {
-                return author;
-            }
-            set
-            {
-                author = value;
-            }
-        }
-
-        public int ReleaseDate
-        {
-            get
-            {
-                return releaseDate;
-            }
-            set
-            {
-                if (value < 2021 && value > 1450)
-                {
-                    releaseDate = value;
-                }
-                else
-                {
-                    releaseDate = -1;
-                }
-
-            }
-        }
-        public override string ToString()
-        {
-            return "Nazov: " + title + newLine + "Pocet stran: " + pages + newLine + "Zaner: " + category + newLine + "Autor: " + author + newLine + "Datum vydania: " + releaseDate;
+            Console.WriteLine($"{title} {pages} {category} {author} {releaseDate}");
         }
     }
 }
